@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device - width, initial - scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    @Html.Partial("_StudentInfo")
+    <div>
+        <p>@Html.ActionLink("Give feedback", "Create", "Feedback")</p><br />
+        <p>@Html.ActionLink("View feedback", "List", "Feedback")</p>
+    </div>
+</body>
+</html>

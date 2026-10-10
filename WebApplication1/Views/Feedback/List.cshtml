@@ -1,0 +1,39 @@
+﻿@model List<WebApplication1.Models.Feedback>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device - width, initial - scale=1.0">
+    <title>Feedback Lists</title>
+</head>
+<body>
+    <div>
+        <h2>Student feedback lists</h2>
+        <table>
+            <tr>
+                <th>Enrollment no</th>
+                <th>Student name</th>
+                <th>Subject</th>
+                <th>Rating</th>
+                <th>Comments</th>
+            </tr>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.EnrollmentNo</td>
+                    <td>@i.StudentName</td>
+                    <td>@i.Subject</td>
+                    <td>@i.Rating</td>
+                    <td>@i.Comments</td>
+                </tr>
+            }
+        </table><br />
+        <div>
+            <p>@Html.ActionLink("Give another feedback", "Create", "Feedback")</p><br />
+            <p>@Html.ActionLink("Go back to home", "Index", "Feedback")</p>
+        </div>
+    </div>
+</body>
+</html>
